@@ -20,6 +20,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailIcon from "@mui/icons-material/Mail";
 import IconWithText from "./icon-with-text";
+import CallIcon from "@mui/icons-material/Call";
 
 const topHeaderIconStyles = {
   color: "secondary.light",
@@ -52,6 +53,11 @@ function Navbar() {
         color: "secondary.dark",
         boxShadow: "none",
         backdropFilter: "blur(15px)",
+        borderBottom: "1px solid",
+        borderBottomColor: {
+          xs: "secondary.A100",
+          md: "transparent",
+        },
       }}
       elevation={0}
     >
@@ -208,6 +214,25 @@ function Navbar() {
                 alignItems: "center",
               }}
             >
+              <Box
+                component={Link}
+                href="tel:+12345678900"
+                prefetch={false}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <CallIcon
+                  sx={{
+                    color: "secondary.dark",
+                    fontSize: {
+                      xs: 24,
+                      md: 28,
+                    },
+                  }}
+                />
+              </Box>
               <Typography
                 variant="h6"
                 sx={{
@@ -215,31 +240,11 @@ function Navbar() {
                     xs: "none",
                     md: "flex",
                   },
-                  color: "secondary.dark",
+                  color: "secondary.main",
                 }}
               >
                 +1 234 567 8900
               </Typography>
-              <Box
-                sx={{
-                  width: 40,
-                  height: 40,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  p: 0.5,
-                  border: 2,
-                  borderColor: "secondary.dark",
-                  borderRadius: "50%",
-                }}
-              >
-                <PersonIcon
-                  sx={{
-                    color: "secondary.dark",
-                    fontSize: 30,
-                  }}
-                />
-              </Box>
             </Box>
           </Box>
         </Toolbar>
@@ -266,7 +271,7 @@ function Navbar() {
               px: 2,
             }}
           >
-            <Logo color="secondary" />
+            <Logo />
           </Box>
 
           <Box
@@ -312,7 +317,7 @@ function Navbar() {
 }
 export default Navbar;
 
-const Logo = ({ color }: { color?: "primary" | "secondary" }) => {
+const Logo = ({ color }: { color?: string }) => {
   return (
     <Box
       sx={{
@@ -320,7 +325,7 @@ const Logo = ({ color }: { color?: "primary" | "secondary" }) => {
         alignItems: "center",
       }}
     >
-      <AdbIcon sx={{ mr: 1, color: color ? `${color}.main` : "inherit" }} />
+      <AdbIcon sx={{ mr: 1, color: color ? `${color}` : "inherit" }} />
       <Typography
         variant="h5"
         noWrap
