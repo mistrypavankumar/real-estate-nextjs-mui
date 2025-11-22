@@ -15,7 +15,6 @@ import Drawer from "@mui/material/Drawer";
 import { List } from "@mui/material";
 import { navData } from "../configs/nav-config";
 import { usePathname } from "next/navigation";
-import PersonIcon from "@mui/icons-material/Person";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailIcon from "@mui/icons-material/Mail";
