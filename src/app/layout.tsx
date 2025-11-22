@@ -7,6 +7,7 @@ import "./globals.css";
 import Navbar from "../components/navbar";
 import theme from "../theme/theme";
 import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -35,7 +36,13 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <Navbar />
-            {children}
+            <Box
+              sx={{
+                pt: 11,
+              }}
+            >
+              {children}
+            </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

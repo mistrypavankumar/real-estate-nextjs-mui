@@ -14,8 +14,9 @@ const theme = createTheme({
     },
     secondary: {
       main: "#377ef9",
-      dark: "#377ef9",
-      light: "#f6f7f8",
+      dark: "#f6f7f8",
+      light: "#f6f7f895",
+      A100: "rgba(255, 255, 255, 0.15)",
     },
     background: {
       default: "#0F1214",
