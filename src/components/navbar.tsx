@@ -220,11 +220,28 @@ function Navbar() {
                 sx={{
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "center",
+                  bgcolor: {
+                    xs: "primary.light",
+                    md: "transparent",
+                  },
+                  borderRadius: "50%",
+                  width: {
+                    xs: 40,
+                    md: 30,
+                  },
+                  height: {
+                    xs: 40,
+                    md: 30,
+                  },
                 }}
               >
                 <CallIcon
                   sx={{
-                    color: "secondary.dark",
+                    color: {
+                      xs: "secondary.main",
+                      md: "secondary.dark",
+                    },
                     fontSize: {
                       xs: 24,
                       md: 28,
@@ -232,18 +249,23 @@ function Navbar() {
                   }}
                 />
               </Box>
-              <Typography
-                variant="h6"
+              <Box
+                component={Link}
+                href="tel:+12345678900"
+                prefetch={false}
                 sx={{
                   display: {
                     xs: "none",
                     md: "flex",
                   },
                   color: "secondary.main",
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  fontSize: 18,
                 }}
               >
                 +1 234 567 8900
-              </Typography>
+              </Box>
             </Box>
           </Box>
         </Toolbar>
